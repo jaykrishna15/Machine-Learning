@@ -93,3 +93,120 @@ Avoid deleting data unless the dataset is large enough to absorb the loss.
 Use imputation methods to maintain dataset completeness.
 
 Forward and backward fill are efficient for time-series or ordered data.
+
+
+
+# 📅 Day 2 – Outlier Detection, Data Cleaning & Feature Scaling
+
+On Day 2, we extended the concepts from Day 1 (Handling Missing Values) and focused on improving data quality by identifying and treating outliers, duplicates, and applying feature scaling to numerical columns.
+These steps are critical in real-world data analysis and machine learning pipelines, as they directly impact model performance and business insights.
+
+### 1️⃣ Outliers – Definition & Importance
+
+Outliers are data points that significantly differ from the majority of observations.
+They may occur due to:
+
+Data entry errors
+
+Measurement issues
+
+Rare but valid events
+
+If not handled properly, outliers can:
+
+Skew averages and distributions
+
+Mislead visualizations
+
+Degrade machine learning model accuracy
+
+### 2️⃣ IQR (Interquartile Range) Method
+🔹 Definition
+
+The IQR method detects outliers using the spread of the middle 50% of the data.
+
+IQR = Q3 − Q1
+
+Lower Bound = Q1 − 1.5 × IQR
+
+Upper Bound = Q3 + 1.5 × IQR
+
+Values outside this range are treated as outliers.
+
+🔹 When to Use
+
+When data is not normally distributed
+
+When you want a robust, statistics-based method
+
+Commonly used in EDA (Exploratory Data Analysis)
+
+### 3️⃣ Capping (Clipping)
+🔹 Definition
+
+Capping limits extreme values by replacing them with predefined minimum and maximum thresholds instead of removing them.
+
+🔹 When to Use
+
+When outliers are valid but extreme
+
+When removing data points could cause data loss
+
+Useful in financial, sales, and pricing data
+
+### 4️⃣ Winsorization
+🔹 Definition
+
+Winsorization is a specialized form of capping where extreme values are replaced using percentile limits (e.g., 1st and 99th percentiles).
+
+🔹 When to Use
+
+When extreme values affect mean and variance
+
+When you want to preserve dataset size
+
+Frequently used before statistical modeling
+
+### 5️⃣ Handling Duplicate Records
+🔹 Definition
+
+Duplicates occur when the same record appears more than once in the dataset.
+
+🔹 When to Handle Duplicates
+
+When duplicates inflate counts, sums, or averages
+
+When working with transactional or customer-level data
+
+Before building dashboards or ML models
+
+Removing duplicates ensures data accuracy and consistency.
+
+### 6️⃣ Feature Scaling (Numerical Columns)
+🔹 Definition
+
+Feature scaling transforms numerical values into a comparable range so that no single feature dominates due to scale differences.
+
+Common scaling approaches include:
+
+Standardization
+
+Normalization
+
+🔹 When to Use
+
+Before applying distance-based algorithms (KNN, K-Means)
+
+When features have different units or magnitudes
+
+Essential for machine learning workflows
+
+## 🎯 Key Learnings from Day 2
+
+Identified and treated outliers using multiple statistical techniques
+
+Understood when to remove vs when to cap extreme values
+
+Cleaned duplicate records for reliable analysis
+
+Applied feature scaling to prepare data for modeling
