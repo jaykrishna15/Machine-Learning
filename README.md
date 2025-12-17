@@ -210,3 +210,164 @@ Understood when to remove vs when to cap extreme values
 Cleaned duplicate records for reliable analysis
 
 Applied feature scaling to prepare data for modeling
+
+# 📅 Day 3: Handling Categorical Data in Machine Learning
+
+### Introduction
+
+In real-world datasets, data is rarely entirely numerical. Many features are categorical, such as gender, city, product type, education level, or customer segment. These variables contain important information but cannot be directly processed by most Machine Learning algorithms.
+
+Since Machine Learning models primarily work with numerical inputs, converting categorical columns into meaningful numerical representations is a critical data preprocessing step.
+
+In this project, the dataset contains both numerical and categorical features. The data is first structured into a DataFrame and then prepared for modeling using the loan_approved dataset. Special attention is given to handling categorical columns so they integrate correctly with numerical features and contribute effectively to model performance.
+
+In Day 3 of this series, the focus is on encoding techniques that transform categorical variables into machine-readable formats while preserving as much information as possible.
+
+### Types of Categorical Data
+
+Before selecting an encoding technique, it is important to understand the type of categorical feature, as the choice of encoding depends on it.
+
+#### 1. Nominal Data
+
+Categories have no inherent order
+
+##### Example:
+
+Color (Red, Blue, Green)
+
+City names
+
+#### 2. Ordinal Data
+
+Categories have a meaningful order
+
+##### Example:
+
+Education level
+
+Ratings (Low, Medium, High)
+
+#### 1. Label Encoding
+
+##### Definition
+
+Label Encoding converts each unique category into a unique integer value.
+
+##### Example:
+
+Male → 0
+
+Female → 1
+
+##### When to Use
+
+When the categorical feature is binary
+
+When using tree-based models:
+
+Decision Trees
+
+Random Forest
+
+XGBoost
+
+##### When the model does not assume numerical distance or magnitude
+
+##### When Not to Use
+
+For nominal features with more than two categories
+
+For linear models, as it may introduce false ordinal relationships
+
+### 2. One-Hot Encoding
+
+##### Definition
+
+One-Hot Encoding creates separate binary columns for each category.
+Each row contains a 1 for the present category and 0 for others.
+
+##### When to Use
+
+For nominal categorical variables
+
+When there is no order between categories
+
+Suitable for models such as:
+
+Linear Regression
+
+Logistic Regression
+
+KNN
+
+Neural Networks
+
+Limitations
+
+Increases dimensionality (curse of dimensionality)
+
+Not efficient for features with many unique categories
+
+### 3. Ordinal Encoding
+
+##### Definition
+
+Ordinal Encoding assigns ordered numerical values to categories based on their ranking or importance.
+
+Example:
+
+Low → 1
+
+Medium → 2
+
+High → 3
+
+##### When to Use
+
+When categories have a clear and meaningful order
+
+When the order carries business or logical significance
+
+Suitable for both linear and tree-based models
+
+##### Important Note
+
+The order must be domain-driven, not arbitrary
+
+Incorrect ordering can negatively affect model performance
+
+### 4. Frequency Encoding
+
+#### Definition
+
+Frequency Encoding replaces each category with its frequency or proportion in the dataset.
+
+Example:
+
+City A → 0.35
+
+City B → 0.15
+
+#####  When to Use
+
+When categorical features have high cardinality
+
+To reduce dimensionality compared to one-hot encoding
+
+Commonly used with:
+
+Large datasets
+
+Tree-based models
+
+##### Advantages
+
+Compact representation
+
+Retains information about category importance
+
+Avoids creating many sparse columns
+
+###### Limitations
+
+Categories with the same frequency receive the same value
