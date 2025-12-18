@@ -371,3 +371,75 @@ Avoids creating many sparse columns
 ###### Limitations
 
 Categories with the same frequency receive the same value
+
+
+# 📊 Feature Engineering — Day 3
+Column Transformation (Using Multiple Datasets)
+### 🎯 Overview
+
+In Day 3 of the Feature Engineering series, I worked on column transformation techniques and applied them to two different datasets to understand how encoding and scaling strategies change based on feature types and dataset requirements.
+
+The focus was on combining encoding + scaling correctly to make datasets fully model-ready.
+
+#### 📁 Datasets Used
+#### 1️⃣ Banana Quality Dataset
+
+Goal: Prepare quality-related features for machine learning models.
+
+##### Techniques Applied:
+
+OrdinalEncoder → For ordered categorical features
+
+OneHotEncoder → For nominal categorical features
+
+StandardScaler → For numerical feature scaling
+
+##### 🔹 Why this approach?
+
+Some banana quality features have natural ordering, making Ordinal Encoding appropriate
+
+Other categorical features have no ranking, so One-Hot Encoding avoids false relationships
+
+Numerical columns were scaled using StandardScaler to ensure equal contribution during model training
+
+#### 2️⃣ Loan Approval Dataset
+
+Goal: Prepare applicant and loan attributes for approval prediction.
+
+##### Techniques Applied:
+
+OneHotEncoder → For all categorical features
+
+StandardScaler → For numerical features
+
+#####🔹 Why this approach?
+
+Loan dataset categorical features are purely nominal
+
+No ordinal relationship exists between categories
+
+Scaling numerical columns improves performance for distance-based and gradient-based models
+
+### 🔍 Column Transformation Summary
+Dataset	Encoding Used	Scaling
+Banana Quality	OrdinalEncoder, OneHotEncoder	StandardScaler
+Loan Approval	OneHotEncoder	StandardScaler
+### 🚀 Key Learnings
+
+Column transformation depends on feature meaning, not just data type
+
+Mixing encoders within a dataset is often necessary
+
+StandardScaler ensures numerical stability across models
+
+Correct preprocessing significantly improves downstream ML performance
+
+### 📌 Next Steps
+
+Upcoming topics in the series:
+
+Feature Scaling deep dive
+
+Feature selection techniques
+
+Building end-to-end preprocessing pipelines
