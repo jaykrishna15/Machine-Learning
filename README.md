@@ -373,7 +373,7 @@ Avoids creating many sparse columns
 Categories with the same frequency receive the same value
 
 
-# 📊 Feature Engineering — Day 3
+# 📊 Feature Engineering — Day 4
 Column Transformation (Using Multiple Datasets)
 ### 🎯 Overview
 
