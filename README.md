@@ -443,3 +443,91 @@ Feature Scaling deep dive
 Feature selection techniques
 
 Building end-to-end preprocessing pipelines
+
+
+# 📘 Feature Engineering – Day 5
+Column Transformer Using Functions
+### 🎯 Objective
+
+The goal of Day 5 is to understand how to build scalable, reusable, and production-ready preprocessing pipelines using ColumnTransformer combined with custom functions.
+This approach is essential when working with mixed data types in real-world machine learning projects.
+
+### 📂 What This Notebook Covers
+
+In this notebook, we focus on applying different transformations to different feature groups efficiently:
+
+####🔹 Numerical Features
+
+Feature scaling using StandardScaler
+
+Ensures numerical columns are on the same scale
+
+Helps models converge faster and perform better
+
+####🔹 Categorical Features
+
+Ordinal Encoding for ordered categorical variables
+
+One-Hot Encoding for nominal categorical variables
+
+Prevents incorrect assumptions about category relationships
+
+### 🔧 Key Concepts Learned
+
+Why ColumnTransformer is preferred over manual preprocessing
+
+How to apply multiple transformations in a single pipeline
+
+How to use functions to make preprocessing:
+
+Reusable
+
+Clean
+
+Easy to maintain
+
+How to handle different datasets with different preprocessing needs
+
+### 📊 Datasets Used
+
+Banana Dataset
+
+Numerical features → StandardScaler
+
+Ordinal categorical features → OrdinalEncoder
+
+Nominal categorical features → OneHotEncoder
+
+Load Dataset
+
+Numerical features → StandardScaler
+
+Categorical features → OneHotEncoder
+
+### 🚀 Why This Is Important
+
+In real-world ML workflows:
+
+Data is rarely clean or uniform
+
+Different columns require different treatments
+
+ColumnTransformer ensures:
+
+No data leakage
+
+Consistent preprocessing
+
+Easy integration with ML models
+
+This approach is industry-standard and widely used in production ML systems.
+
+### 📌 Outcome
+
+By completing Day 5, I can now:
+
+Design end-to-end preprocessing pipelines
+
+Handle mixed feature types efficiently
+
+Prepare datasets in a way that is model-ready and scalable
